@@ -19,8 +19,8 @@ func NewServer(ip string, port int, uc Usecase) *Server {
 	}
 
 	api.server = echo.New()
-	api.server.GET("/", api.GetName)
-	api.server.POST("/", api.PostName)
+	api.server.GET("/", api.GetName, Auth)
+	api.server.POST("/", api.PostName, Auth)
 
 	api.address = fmt.Sprintf("%s:%d", ip, port)
 

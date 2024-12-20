@@ -39,7 +39,7 @@ func (srv *Server) login(writer echo.Context) error {
 		*input.Login,
 		*input.Password,
 		jwt.RegisteredClaims{
-			ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Second * 20)),
+			ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Second * 60)),
 		},
 	}
 
